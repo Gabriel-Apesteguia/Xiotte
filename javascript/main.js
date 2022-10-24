@@ -27,8 +27,7 @@ const productos = [
     {id: 17, nombre: "Gringas carnitas", precio: 890, cantidad: 1, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwG7zLmDSzHUk9S2Cubx7SCfL-gMO5kjS9ww&usqp=CAU"},
 ]
 
-let carrito = [];
-
+let carrito = JSON.parse(localStorage.getItem ("carrito")) || [];
 
 /* APP */
 
@@ -53,9 +52,9 @@ productos.forEach((product) => {
         
     const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
     
-    if(repeat) {
+    if (repeat) {
         carrito.map((prod) => {
-            if(prod.id === product.id){
+            if (prod.id === product.id) {
                 prod.cantidad++;
             }
         });
@@ -67,9 +66,16 @@ productos.forEach((product) => {
             precio : product.precio,
             cantidad: product.cantidad,
         });
-    }
         console.log(carrito);
+        console.log(carrito.length);
         carritoCounter();
-    })
+        saveLocal();
+    }
+    });
 });
+
+const saveLocal = () => {
+localStorage.setItem("carrito", JSON.stringify(carrito));
+};
+
 

@@ -165,9 +165,17 @@ body {
     padding-top: 20px;
 }
 
-/* Boton borrar elemento del carrito */
+/* Botones del carrito */
 
 .delete-product {
+    cursor: pointer;
+}
+
+.sumar {
+    cursor: pointer;
+}
+
+.restar {
     cursor: pointer;
 }
 
