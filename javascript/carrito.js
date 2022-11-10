@@ -56,6 +56,11 @@ const pintarCarrito = () => {
 
         eliminar.addEventListener("click", () => {
             eliminarProducto (product.id);
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Este producto se elimino de tu pedido',
+                })
         })
     });
 
