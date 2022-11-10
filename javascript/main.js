@@ -50,6 +50,12 @@ productos.forEach((product) => {
 
     comprar.addEventListener("click", () => {
         
+        Swal.fire(
+            'Que rico!',
+            'Este producto se agrego al carrito!',
+            'success'
+        )
+        
     const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
     
     if (repeat) {
@@ -71,6 +77,7 @@ productos.forEach((product) => {
         carritoCounter();
         saveLocal();
     }
+    
     });
 });
 
